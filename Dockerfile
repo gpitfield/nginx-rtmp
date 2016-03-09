@@ -13,5 +13,6 @@ WORKDIR ${dir}
 COPY ./files/mime.types /etc/mime.types
 RUN ln -s ${dir}/nginx/sbin/nginx /usr/sbin/nginx
 EXPOSE 80 1935
+RUN yum install -y gettext
 # comment to trigger rebuild
 CMD ["nginx", "-g", "daemon off;"]
